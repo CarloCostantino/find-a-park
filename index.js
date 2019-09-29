@@ -1,10 +1,12 @@
 "use strict";
 
-const baseEndpoint = "https://developer.nps.gov/api/v1/"
+const baseURL = "https://developer.nps.gov/api/v1/parks"
 const key = "ZBvyoi84QgJRYIfHYVAFYxnzREWMMFb4dy0xAXmu"
 
-function buildURL(params) {
-  console.log(params);
+function buildParams(params) {
+  const queryParams = Object.keys(params)
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
+    return queryParams.join("&")
 }
 
 function getParks(query, limit) {
@@ -13,7 +15,8 @@ function getParks(query, limit) {
     limit: limit,
     api_key: key,
   }
-  buildURL(params);
+  const url = `${baseURL}?${buildParams(params)}`
+  console.log(url);
 }
 
 function watchSubmit() {
@@ -21,7 +24,6 @@ function watchSubmit() {
     event.preventDefault();
     const query = $("#query").val();
     const limit = $("#limit").val();
-    console.log(query, limit);
     getParks(query, limit);
   })
 }
