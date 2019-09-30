@@ -36,14 +36,19 @@ function getParks(query, limit) {
       if (responce.ok) {
         $('.js-err').addClass('hidden');
         return responce.json();
-      } else {
-        throw new Error(responce.statusText);
       }
     })
-    .then(responceJson => (displayResults(responceJson)))
+    .then(responceJson => {
+      if (responceJson.data.length === 0) {
+        $('.js-err').removeClass('hidden');
+        $('.results-section').addClass('hidden');
+      } else {
+        displayResults(responceJson)
+      }
+    })
     .catch(err => {
-      $('.js-err').text(`Oh no, something happened ${err.message}`);
-      $('.js-err').removeClass('hidden');
+      $('.js-err').append('<p>Something went wrong</p>');
+      console.log("catch ran")
     })
   }
 

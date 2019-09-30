@@ -16,11 +16,11 @@
       <form class="js-form">
         <label for="query" class="query-label">What State(s)?</label>
         <input id="query" class="js-query" type="text" placeholder="e.g. WA,OR" required>
+        <span class="js-err hidden"><p>Two letter state code was not found</p></span>
         <label for="limit" class="limit-label">Max Results Displayed</label>
         <input id="limit" class="js-results-limit" type="text" placeholder="ENTER LIMIT" value="10" required>
         <input id="submit" type="submit" class="submit" value="Find Parks">
       </form>
-      <div class="js-error hidden"></div>
       <section class="results-section hidden">
         <h2 class="results-label">Results</h1>
         <ul class="js-results-list"></ul>
