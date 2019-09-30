@@ -15,7 +15,11 @@ function displayResults(responceJson) {
   console.log(responceJson);
   for (let i = 0; i < responceJson.data.length; i++) {
     $('.js-results-list').append(`
-    <li class='results'><h2 class='park-name'>${responceJson.data[i].name}</h2><p class='description'>${responceJson.data[i].description}</p><a class='link' href='${responceJson.data[i].url}' target='_blank'>Learn More</a></li>`);
+    <li class='results'>
+    <h3 class='park-name'>${responceJson.data[i].name}</h3>
+    <p class='description'>${responceJson.data[i].description}</p>
+    <a class='link' href='${responceJson.data[i].url}' target='_blank'>${responceJson.data[i].url}</a>
+    </li>`);
   }
 }
 

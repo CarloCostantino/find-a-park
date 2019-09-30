@@ -13,21 +13,17 @@
   </header>
   <main>
     <div class="content-container">
-      <section class="form-section"> 
-        <form class="js-form">
-          <label for="query" class="query-label">What State?</label>
-          <input id="query" class="js-query" type="text" placeholder="e.g. WA,OR" required>
-          <label for="limit" class="limit-label">Max Results Displayed</label>
-          <input id="limit" class="js-results-limit" type="text" placeholder="ENTER LIMIT" value="10" required>
-          <input id="submit" type="submit" class="submit" value="Find Parks">
-        </form>
-        <div class="js-error hidden"></div>
-      </section>
+      <form class="js-form">
+        <label for="query" class="query-label">What State(s)?</label>
+        <input id="query" class="js-query" type="text" placeholder="e.g. WA,OR" required>
+        <label for="limit" class="limit-label">Max Results Displayed</label>
+        <input id="limit" class="js-results-limit" type="text" placeholder="ENTER LIMIT" value="10" required>
+        <input id="submit" type="submit" class="submit" value="Find Parks">
+      </form>
+      <div class="js-error hidden"></div>
       <section class="results-section hidden">
-        <h1 class="results-label">Results</h1>
-        <div class="js-results-container">
-          <ul class="js-results-list"></ul>
-        </div>
+        <h2 class="results-label">Results</h1>
+        <ul class="js-results-list"></ul>
       </section>
     </div>
   </main>
